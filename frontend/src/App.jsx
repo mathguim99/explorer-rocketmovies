@@ -2,6 +2,7 @@ import Button from './components/Button'
 import ButtonText from './components/ButtonText'
 import Input from './components/Input'
 import Header from './components/Header'
+import Card from './components/Card'
 
 
 import { FiMail, FiLock } from 'react-icons/fi'
@@ -15,6 +16,20 @@ export default function App() {
       <Input type='text' placeholder='olá' icon={FiMail}/>
       bbbb
       <ButtonText title="Socorro" icon={FiLock}/>
+
+      <Card data={
+        {
+          title: "Os Três Mosqueteiros",
+          rating: 4,
+          description: 'Loucuras',
+          tags: [
+            {name: 'Aventura',
+            key: 1},
+            {name: 'Ação',
+            key: 2},
+          ]
+        }
+      }/>
     </div>
   )
 }

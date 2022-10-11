@@ -31,6 +31,7 @@ export default createGlobalStyle`
 
     a {
         transition: filter 0.5s;
+        text-decoration: none;
     }
 
     a:hover {
