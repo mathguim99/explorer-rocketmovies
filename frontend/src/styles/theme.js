@@ -11,6 +11,8 @@ export default {
         BACKGROUND: '#1C1B1E',
 
         WHITE: '#F4EDE8',
-        DARK_WHITE: '#999591'
+        DARK_WHITE: '#999591',
+
+        BLACK: '#0D0C0F'
     }
 }

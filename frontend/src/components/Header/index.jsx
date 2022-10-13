@@ -2,6 +2,8 @@ import { Container } from "./styles";
 
 import Input from "../Input";
 
+import { Link } from "react-router-dom";
+
 export default function Header(){
     return (
         <Container>
@@ -14,8 +16,10 @@ export default function Header(){
                     <h2>Matheus Guimarães</h2>
                     <a href="/">logout</a>
                 </div>
-
-                <img src="https://github.com/mathguim99.png" alt="Profile image of the user" />
+                
+                <Link to="/profile">
+                    <img src="https://github.com/mathguim99.png" alt="Profile image of the user" />
+                </Link>
             </div>
         </Container>
     )

@@ -29,7 +29,7 @@ export const Container = styled.header`
             width: max-content;
         }
 
-        > img {
+        img {
             width: 64px;
             height: 64px;
             border-radius: 50%

@@ -3,6 +3,7 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 
 import { FiMail, FiLock, FiUser, FiArrowLeft } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default function SignIn() {
     return (
@@ -33,7 +34,7 @@ export default function SignIn() {
 
                 <Button title="Cadastrar" type="submit"/>
 
-                <a href="/">{FiArrowLeft()} Voltar para o login</a>
+                <Link to="/">{FiArrowLeft()} Voltar para o login</Link>
             </Form>
             
             <Image />

@@ -31,6 +31,10 @@ export const Form = styled.form`
         line-height: 32px;
         margin: 28px 0;
     }
+    
+    > button {
+        margin-top: 24px;
+    }
 
     > a {
         display: block;

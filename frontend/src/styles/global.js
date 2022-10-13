@@ -11,13 +11,14 @@ export default createGlobalStyle`
         background-color: ${({theme}) => theme.COLORS.BACKGROUND};
     }
     
-    body, button, a, input {
+    body, button, a, input, textarea {
         font-family: 'Roboto Slab', serif;
         color: ${({theme}) => theme.COLORS.WHITE};
     }
 
     button {
         cursor: pointer;
+        border: none;
         transition: transform 0.2s, filter 0.5s;
     }
 

@@ -32,6 +32,10 @@ export const Form = styled.form`
         margin: 28px 0;
     }
 
+    > button {
+        margin-top: 24px;
+    }
+
     > a {
         display: block;
         text-align: center;
