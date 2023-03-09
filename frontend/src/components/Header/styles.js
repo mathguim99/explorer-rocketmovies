@@ -21,6 +21,7 @@ export const Container = styled.header`
         a {
             text-decoration: none;
             color: ${({theme}) => theme.COLORS.GREY_600};
+            cursor: pointer;
         }
 
         .profile-info {
@@ -32,7 +33,8 @@ export const Container = styled.header`
         img {
             width: 64px;
             height: 64px;
-            border-radius: 50%
+            border-radius: 50%;
+            object-fit: cover;
         }
     }
 `

@@ -3,19 +3,22 @@ import { Container } from "./styles";
 import Tag from "../Tag";
 import Rating from "../Rating";
 
-import { Link } from "react-router-dom";
 
 export default function Card({data, ...rest}) {
     return (
-        <Link to="/movie">
             <Container {...rest}>
                 <h3>{data.title}</h3>
 
                 <Rating number={data.rating} />
 
-                <p>
+                {
+                    data.description &&
+                    <p>
                     {data.description}
-                </p>
+                    </p>
+                }
+
+                
                 
                 {
                     data.tags &&
@@ -24,7 +27,6 @@ export default function Card({data, ...rest}) {
                     </div>
                 }
             </Container>
-        </Link>
     )
 }
 

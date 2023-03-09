@@ -9,6 +9,14 @@ export const Container = styled.section`
     gap: 15px;
     margin-bottom: 24px;
 
+    cursor: pointer;
+
+    :hover {
+        filter: brightness(1.2);
+        scale: 0.97;
+        transition: all 1s;
+    }
+
     > h3 {
         font-size: 24px;
     }

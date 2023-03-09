@@ -13,15 +13,17 @@ class MoviesController {
             user_id
         });
 
-        const tagsInsert = tags.map(tag => {
-            return {
-                name: tag,
-                user_id,
-                movie_id
-            }
-        });
+        if(tags[0]){
+            const tagsInsert = tags.map(tag => {
+                return {
+                    name: tag,
+                    user_id,
+                    movie_id
+                }
+            });
 
-        await knex("tags").insert(tagsInsert);
+            await knex("tags").insert(tagsInsert);
+        }
 
         response.json();
     }
@@ -43,45 +45,6 @@ class MoviesController {
         }
 
         response.json(movieNote)
-    }
-
-    async update(request, response) {
-        const { id } = request.params;
-        const { title, description, rating, tags } = request.body;
-
-        const movieNote = await knex("movies").where({ id: id }).first();
-        const user_id = movieNote.user_id
-
-        if(tags) {
-            const previousTags = await knex("tags")
-                .select("name")
-                .where({ movie_id: id })
-            
-            const listPreviousTags = previousTags.map(tag => tag.name)
-            
-            if (listPreviousTags != tags) {
-                await knex("tags").whereIn("name", listPreviousTags).delete();
-
-                const tagsInsert = tags.map(tag => {
-                    return {
-                        name: tag,
-                        user_id,
-                        movie_id: id
-                    }
-                });
-        
-                await knex("tags").insert(tagsInsert);
-            }
-        }
-
-        movieNote.title = title ?? movieNote.title;
-        movieNote.description = description ?? movieNote.description;
-        movieNote.rating = rating ?? movieNote.rating;
-        movieNote.updated_at = knex.fn.now();
-
-        await knex("movies").where({ id: id }).first().update(movieNote);
-
-        response.status(200).json();
     }
 
     async delete(request, response) {

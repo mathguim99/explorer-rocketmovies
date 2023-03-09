@@ -6,10 +6,10 @@ class UsersController {
     async create(request, response) {
         const { name, email, password } = request.body;
 
-        const userExists = await knex("users").where({ email: email }).first();
+        const userExists = await knex("users").where({ email }).first();
 
         if (userExists) {
-            throw new AppError("This e-mail is already in use.")
+            throw new AppError("This e-mail is already in use.");
         }
         
         const hashedPassword = await hash(password, 6)

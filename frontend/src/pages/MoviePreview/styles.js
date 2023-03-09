@@ -13,11 +13,18 @@ export const Container = styled.div`
     }
 `
 
+export const Buttons = styled.div`
+    display: flex;
+    flex-direction: left;
+    justify-content: space-between;
+`
+
 export const Title = styled.div`
     display: grid;
     grid-template-areas: "title rating"
     "profile date";
-    width: 390px;
+    width: 100%;
+
     row-gap: 24px;
     margin: 40px 0;
 
@@ -33,6 +40,7 @@ export const Title = styled.div`
 export const Profile = styled.div`
     grid-area: profile;
 
+    
     display: flex;
     align-items: center;
     gap: 8px;

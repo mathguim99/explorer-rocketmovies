@@ -12,6 +12,5 @@ moviesRoutes.get("/:id", moviesController.show)
 moviesRoutes.get("/", moviesController.index)
 moviesRoutes.post("/", moviesController.create)
 moviesRoutes.delete("/:id", moviesController.delete)
-moviesRoutes.put("/:id", moviesController.update)
 
 module.exports = moviesRoutes;

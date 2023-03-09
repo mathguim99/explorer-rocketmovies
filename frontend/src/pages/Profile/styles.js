@@ -33,9 +33,11 @@ export const Image = styled.div`
     width: 186px;
     position: relative;
     margin: -84px auto 64px;
-
+    
     > img {
         width: 186px;
+        height: 186px;
+        object-fit: cover;
         border-radius: 50%;
     }
 
