@@ -1,5 +1,7 @@
 // IMPORTS
 require("express-async-errors");
+require("dotenv/config");
+
 const uploadConfig = require("./configs/upload")
 const routes = require("./routes")
 const AppError = require("./utils/AppError")
@@ -31,5 +33,5 @@ app.use( (error, request, response, next) => {
     });
 });
 
-const PORT = 3333;
-app.listen(3333, () => console.log(`Server is listening on port ${PORT}`))
+const PORT = process.env.PORT || 3333;
+app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`))
